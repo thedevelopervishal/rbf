@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import RBF from "../img/RBF.jpg";
+import reb from "../img/ZUMBA.jpg";
 class About extends Component {
   constructor(props) {
     super(props);
@@ -40,7 +41,7 @@ class About extends Component {
                 <div class="row">
                   <img
                     className="aboutImg"
-                    src="https://cdn.shopify.com/s/files/1/0849/8154/files/about-motto-1.jpg?15451586511908439013"
+                    src={reb}
                   />
                 </div>
               </div>
@@ -53,3 +54,4 @@ class About extends Component {
 }
 
 export default About;
+// "https://cdn.shopify.com/s/files/1/0849/8154/files/about-motto-1.jpg?15451586511908439013"

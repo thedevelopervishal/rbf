@@ -7,7 +7,7 @@ export default function Footer() {
       className="text-white p-4 text-center"
       style={{ backgroundColor: "#333333" }}
     >
-      Copyright &copy; {new Date().getFullYear()} The Stackmentalists
+      Copyright &copy; {new Date().getFullYear()} Vishal Sharma
     </footer>
   );
 }
