@@ -42,7 +42,7 @@ class ViewPost extends Component {
         <Header isAuthenticated={"I fooled my Header"} />
         <BackButton
           history={this.props.history}
-          token={this.props.match.params.token}
+         
         />
         <div className="container">
           <div className="row">

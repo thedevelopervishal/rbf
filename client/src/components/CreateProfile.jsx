@@ -4,10 +4,10 @@ const API_END = require("../constant");
 class CreateProfile extends Component {
   constructor(props) {
     super(props);
-    var token = props.match.params.token;
+    var token = localStorage.getItem("mytoken");
     this.state = {
-      token: token,
-      jwttoken: "Bearer " + token,
+      token:token,
+      jwttoken:token,  
       username: "",
       user: { _id: "" },
       age: "",
@@ -42,7 +42,7 @@ class CreateProfile extends Component {
   onSubmit(e) {
     e.preventDefault();
     const newProfile = {
-      token: this.state.token,
+      token: this.state.jwttoken,
       username: this.state.username,
       user: { _id: this.state._id },
       age: Number(this.state.age),
@@ -76,7 +76,7 @@ class CreateProfile extends Component {
         console.log(responseJson);
         if (responseJson.error === undefined) {
           //console.log("Jai mahesmati");
-          this.props.history.push("/dashboard/" + this.state.token);
+          this.props.history.push("/dashboard");
         } else {
           console.log(responseJson.error);
         }

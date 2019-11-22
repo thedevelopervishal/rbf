@@ -5,11 +5,11 @@ const API_END = require("../constant");
 class EditProfile extends Component {
   constructor(props) {
     super(props);
-    var token = props.match.params.token;
+    var token = localStorage.getItem("mytoken");
     this.state = {
       // loaded:false,
       token: token,
-      jwttoken: "Bearer " + token,
+      jwttoken: token,
       username: "",
       user: { _id: "" },
       age: "",
@@ -41,7 +41,7 @@ class EditProfile extends Component {
       .then(responseJson => {
         let receivedState = responseJson;
         this.setState({
-          jwttoken: "Bearer " + this.state.token,
+          jwttoken:this.state.token,
           username: receivedState.username,
           user: { _id: receivedState._id },
           age: receivedState.age,
@@ -54,7 +54,7 @@ class EditProfile extends Component {
           bodyShape: receivedState.bodyShape,
           idealPlate: receivedState.idealPlate
         });
-        console.log(this.state.jwttoken);
+        
       })
       .catch(err => {
         console.log(err);
@@ -105,7 +105,7 @@ class EditProfile extends Component {
       .then(responseJson => {
         console.log(responseJson);
         if (responseJson.error === undefined) {
-          this.props.history.push("/dashboard/" + this.state.token);
+          this.props.history.push("/dashboard");
         }
         this.setState({ jwttoken: this.state.jwttoken, ...newProfile });
       })
@@ -123,7 +123,7 @@ class EditProfile extends Component {
         />
         <BackButton
           history={this.props.history}
-          token={this.props.match.params.token}
+         
         />
         <div className="container">
           <div className="row">

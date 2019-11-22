@@ -10,13 +10,15 @@ const API_END = require("../constant");
 class FitHerd extends Component {
   constructor(props) {
     super(props);
+    var token = localStorage.getItem("mytoken");
     this.state = {
       result: "",
       cards: [],
+      token:token,
       lengthCount: 0
     };
-    var token = "Bearer " + props.match.params.token;
-    console.log("Starting profiles fetch");
+    
+    
     fetch(API_END+"/api/profiles/all", {
       crossDomain: true,
       method: "GET",
@@ -44,7 +46,7 @@ class FitHerd extends Component {
           userid={responseJson[i].user}
           profile_username={responseJson[i].username}
           category={responseJson[i].idealPlate.category}
-          token={this.props.match.params.token}
+          
         />
       );
     }
@@ -57,7 +59,6 @@ class FitHerd extends Component {
           <div className="c">
             <BackButton
               history={this.props.history}
-              token={this.props.match.params.token}
             />
             <span className="heading1">THE FIT HERD</span>
             <div className="sub-heading1">

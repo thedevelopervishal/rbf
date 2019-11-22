@@ -6,10 +6,10 @@ const API_END = require("../constant");
 class CreatePost extends Component {
   constructor(props) {
     super(props);
-    var token = props.match.params.token;
+    var token = localStorage.getItem("mytoken");
     this.state = {
       username: "",
-      token: "Bearer " + token,
+      token: token,
       post: ""
     };
     this.onChange = this.onChange.bind(this);
@@ -99,7 +99,6 @@ class CreatePost extends Component {
         />
         <BackButton
           history={this.props.history}
-          token={this.props.match.params.token}
         />
         <div className="container">
           <div className="row">

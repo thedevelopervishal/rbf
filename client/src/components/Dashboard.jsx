@@ -7,7 +7,9 @@ const API_END = require("../constant");
 class Dashboard extends Component {
   constructor(props) {
     super(props);
-    var token = props.match.params.token;
+    var token = localStorage.getItem("mytoken");
+    
+    //props.match.params.token;
     this.state = {
       toggleComponent: false,
       currentComponent: "",
@@ -21,8 +23,8 @@ class Dashboard extends Component {
         margin: "auto"
       },
       recommendedMeal: { protein: "", carbs: "", fats: "", fibres: "" },
-      token: token,
-      jwttoken: "Bearer " + token,
+      token:token,
+      jwttoken: token,
       username: "",
       user: { _id: "", name: "" },
       age: "",
@@ -40,7 +42,7 @@ class Dashboard extends Component {
       date: "",
       idealPlate: {}
     };
-    //console.log("TOKEN -> ", "Bearer " + token);
+    
   }
   componentDidMount() {
     var newState;
@@ -58,7 +60,7 @@ class Dashboard extends Component {
         newState = responseJson;
         //console.log(responseJson);
         if (responseJson.error !== undefined) {
-          this.props.history.push("/createprofile/" + this.state.token);
+          this.props.history.push("/createprofile");
         }
         // create chart
         ChartUtil(responseJson.idealPlate);
@@ -77,13 +79,13 @@ class Dashboard extends Component {
       });
   }
   pushToEditPage = () => {
-    this.props.history.push("/editprofile/" + this.state.token);
+    this.props.history.push("/editprofile");
   };
   pushToPostsPage = () => {
-    this.props.history.push("/createpost/" + this.state.token);
+    this.props.history.push("/createpost");
   };
   pushToFitHerdPage = () => {
-    this.props.history.push("/thefitherd/" + this.state.token);
+    this.props.history.push("/thefitherd");
   };
   toggleComponent = () => {
     if (this.state.toggleComponent === false) {

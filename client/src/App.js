@@ -23,17 +23,17 @@ class App extends Component {
           <Route exact path="/" component={Landing} />
           <div className="c">
             <Route exact path="/register" component={Register} />
-            <Route exact path="/createpost/:token" component={CreatePost} />
+            <Route exact path="/createpost" component={CreatePost} />
             <Route exact path="/login" component={Login} />
             <Route
               exact
-              path="/createprofile/:token"
+              path="/createprofile"
               component={CreateProfile}
             />
-            <Route exact path="/thefitherd/:token" component={FitHerd} />
-            <Route exact path="/editprofile/:token" component={EditProfile} />
-            <Route exact path="/dashboard/:token" component={Dashboard} />
-            <Route exact path="/viewposts/:id/:token" component={ViewPosts} />
+            <Route exact path="/thefitherd" component={FitHerd} />
+            <Route exact path="/editprofile" component={EditProfile} />
+            <Route exact path="/dashboard" component={Dashboard} />
+            <Route exact path="/viewposts/:id" component={ViewPosts} />
           </div>
           <Footer />
         </div>
