@@ -195,3 +195,82 @@
   margin-top: 30px;
   margin-bottom: 30px;
 }
+.m_img{
+  /* width: 99%; */
+  height: 25rem;
+}
+.m_rb{
+font-size: 1.5rem;
+margin-left: 19%;
+margin-top: -61%;
+color: white;
+}
+.m_jo{
+margin-top: 0;
+margin-bottom: 1rem;
+font-size: 0.9rem;
+color: white;
+}
+.sb{
+margin-left: 23%;
+}
+.cb1{
+  background-color: #dc3535;
+  /* color: #fff; */
+  border: none;
+  text-align: center;
+  border-radius: 0rem;
+  border-bottom-left-radius: 2rem;
+  margin-bottom: 5%;
+}
+.cb11{
+  background-color: #dc3535;
+  border-radius: 0rem;
+  border-bottom-width: 0rem;
+  border-top-right-radius: 2rem;
+}
+.cb12{
+  background-color: #dc3535;
+  border-radius: 0rem;
+  border-bottom-width: 0rem;
+  border-top-right-radius: 2rem;
+}
+.cb13{
+  background-color: #dc3535;
+  border-radius: 0rem;
+  border-bottom-width: 0rem;
+  border-top-right-radius: 2rem;
+}
+.c1{
+  border:none;
+  border-radius: 0rem;
+  border:0px;
+}
+.c1.card{
+  margin-top: 30.9%; 
+  margin-left: 33%;
+}
+.c2.card{
+  margin-top: 5.9%; 
+  margin-left: 0%;
+}
+.c3.card{
+  margin-top: 5.9%; 
+  margin-left: 33%;
+}
+.p1{
+  width: 10rem;
+}
+@media(max-width:426px){
+  .landing2{
+    display:none
+  }
+  .mobile{
+    display: visible;
+  }
+}
+@media(min-width:426px){
+  .mobile{
+    display: none;
+  }
+}
